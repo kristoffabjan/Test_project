@@ -21,7 +21,6 @@ class CreateBikeTable extends Migration
             $table->float('price');
             $table->char('size',1);
             $table->integer('suspension_range');
-            $table->timestamps();
         });
     }
 

@@ -1,10 +1,12 @@
 <?php
 
+use Doctrine\DBAL\Schema\Schema as SchemaSchema;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
-class AddCollumnToBikeTable extends Migration
+class AddAttributesBikeTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,8 +16,8 @@ class AddCollumnToBikeTable extends Migration
     public function up()
     {
         Schema::table('bike', function (Blueprint $table) {
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->date('updated_at')->default(DB::raw('CURRENT_DATE'));
+            $table->date('created_at')->default(DB::raw('CURRENT_DATE'));
         });
     }
 
@@ -26,8 +28,6 @@ class AddCollumnToBikeTable extends Migration
      */
     public function down()
     {
-        Schema::table('bike', function (Blueprint $table) {
-            //
-        });
+        //
     }
 }

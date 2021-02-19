@@ -24,9 +24,8 @@ Route::get('/index', function () {
     return view('layouts/index');
 });
 
-Route::get('/bikes', [BikeController::class, 'index'])->name('home');
+Route::get('/home', [BikeController::class, 'index'])->name('home');
 Route::get('/newBike', [BikeController::class, 'new_bike'])->name('addNewBike');
+Route::post('/newBike', [BikeController::class, 'store']);
 
 Auth::routes();
-
-Route::get('/home', [HomeController::class, 'index']);

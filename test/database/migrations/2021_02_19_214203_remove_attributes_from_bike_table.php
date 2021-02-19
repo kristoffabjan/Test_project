@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class ChangeBikeTable extends Migration
+class RemoveAttributesFromBikeTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,11 +14,9 @@ class ChangeBikeTable extends Migration
     public function up()
     {
         Schema::table('bike', function (Blueprint $table) {
-            $table->integer('price')->change();
-            $table->dropColumn('size');
-            $table->string('url');
+            $table->dropColumn('created_at');
+            $table->dropColumn('updated_at');
         });
-
     }
 
     /**
@@ -28,6 +26,8 @@ class ChangeBikeTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('bike', function (Blueprint $table) {
+            //
+        });
     }
 }

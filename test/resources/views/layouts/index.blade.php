@@ -24,7 +24,7 @@
     <div id="app" >
         <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
             <div class="container">
-                <a class="navbar-brand d-flex" href="{{ url('/') }}">
+                <a class="navbar-brand d-flex" href="{{ url('/home') }}">
                     <img class="pr-3" src="logos/bicycle.svg" style="max-height:60px; max-width:60px" alt="">
                     <div class="pr-3"><h2><strong>|</strong></h2></div>
                     <div class="pt-2"><strong>BikeFinderApp</strong></div>
