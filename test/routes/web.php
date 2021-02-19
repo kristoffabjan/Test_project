@@ -25,6 +25,7 @@ Route::get('/index', function () {
 });
 
 Route::get('/bikes', [BikeController::class, 'index'])->name('home');
+Route::get('/newBike', [BikeController::class, 'new_bike'])->name('addNewBike');
 
 Auth::routes();
 
