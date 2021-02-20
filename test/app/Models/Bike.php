@@ -9,20 +9,13 @@ class Bike extends Model
 {
     use HasFactory;
 
-    #public $timestamps = FALSE;
-
-    protected $table = 'bike';
-
     protected $fillable = [
         'brand' ,
         'model' ,
         'release_date' ,
         'price',
         'suspension_range',
-        #'user_id',
-        'url',
-        #'updated_at',
-        #'created_at'
+        'url'
     ];
 
     /**
@@ -43,4 +36,8 @@ class Bike extends Model
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }
