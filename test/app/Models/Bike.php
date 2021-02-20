@@ -9,7 +9,7 @@ class Bike extends Model
 {
     use HasFactory;
 
-    public $timestamps = FALSE;
+    #public $timestamps = FALSE;
 
     protected $table = 'bike';
 
@@ -19,10 +19,10 @@ class Bike extends Model
         'release_date' ,
         'price',
         'suspension_range',
-        'user_id',
+        #'user_id',
         'url',
-        'updated_at',
-        'created_at'
+        #'updated_at',
+        #'created_at'
     ];
 
     /**
