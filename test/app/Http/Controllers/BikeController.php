@@ -9,7 +9,11 @@ use Illuminate\Support\Facades\Auth;
 class BikeController extends Controller
 {
     public function index(){
-        return view('home');
+        $bikes = Bike::get();
+
+        return view('home',[
+            'bikes' => $bikes
+        ]);
     }
 
     public function new_bike(){

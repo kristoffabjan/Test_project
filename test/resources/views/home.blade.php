@@ -17,11 +17,17 @@
                     {{ __('You are logged in!') }}
                 </div>
             </div>
-            <div class="mt-3 bg-succes justify-content-center d-flex">
+
+            <div class="mt-3 mb-4 bg-succes justify-content-center d-flex">
                 <h3 class="mr-4">Add another bike to the community!</h3>
                 <a class="btn btn-lg btn-success" href="{{route('addNewBike')}}" role="button">Link</a>
             </div>
 
+            @foreach($bikes as $bike)
+                <div>
+                    <h2>{{$bike->brand}}</h2>
+                </div>
+            @endforeach
         </div>
     </div>
 </div>
